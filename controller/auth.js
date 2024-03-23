@@ -46,16 +46,61 @@ export const registro = async (req,res) => {
 
 export const login = async (req,res) => {
     try{
-        const query = `SELECT * FROM usuarios`;
-        const [datos] = await conexion.query(query);
+        // const query = `SELECT * FROM usuarios`;
+        // const [datos] = await conexion.query(query);
+        // return res.status(200).json({
+        //     status:"Success",
+        //     message:datos
+        // })
+        const {email, password} = req.body;
+        const query = `
+            SELECT *
+            FROM usuarios
+            WHERE email = ?
+        `;
+        const valor = [email];
+        const [existeUsuario] = await conexion.query(query,valor);
+        if(!existeUsuario[0].email){
+            return res.status(400).json({
+                status:"Error",
+                message:"[-] No existe el usuario."
+            })
+        }
+        console.log();
+        const queryPassword = `
+            SELECT password
+            FROM usuarios
+            WHERE email = ?
+        `;
+        const valorPassword = [req.body.email];
+        const [conseguirPassword] = await conexion.query(queryPassword,valorPassword);
+        console.log(conseguirPassword[0].password);
+        if(!conseguirPassword){
+            return res.status(400).json({
+                status:"Error",
+                message:"[-] Algo raro con la password."
+            })
+        }
+
+        const passwordCorrecta = await bcrypt.compare(req.body.password, conseguirPassword[0].password);
+
+        if(!passwordCorrecta){
+            return res.status(400).json({
+                status:"Error",
+                message:"[-] La password es incorrecta."
+            })
+        }
+
         return res.status(200).json({
             status:"Success",
-            message:datos[0]
+            message:"[+] Has logueado sesión correctamente.",
+            usuario:existeUsuario[0]
         })
     }catch(e){
-        return res.status(200).json({
+        console.log(e);
+        return res.status(400).json({
             status:"Error",
-            message:e
+            message:"[-] Usuario o contraseña incorrectos."
         })
     }
 
