@@ -1,0 +1,13 @@
+### POST - LOGIN
+POST http://127.0.0.1:3030/api/auth/login
+
+
+### POST - REGISTRO
+POST http://127.0.0.1:3030/api/auth/registro
+Content-Type: application/json
+
+{
+    "username":"tstterter",
+    "email":"test@gmail.com",
+    "password":"mipassword123"
+}
