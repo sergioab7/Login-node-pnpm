@@ -1,6 +1,7 @@
 import conexion from "../database/conexion.js"
 import { validacionRegistro } from "../schema/validarRegistro.js";
 import bcrypt from "bcrypt";
+import { crearToken } from "../utils/crearToken.js";
 
 export const registro = async (req,res) => {
     try{
@@ -43,7 +44,6 @@ export const registro = async (req,res) => {
         })
     }
 }
-
 export const login = async (req,res) => {
     try{
         // const query = `SELECT * FROM usuarios`;
@@ -52,9 +52,9 @@ export const login = async (req,res) => {
         //     status:"Success",
         //     message:datos
         // })
-        const {email, password} = req.body;
+        const {email} = req.body;
         const query = `
-            SELECT *
+            SELECT id, username, email, id_nota, created
             FROM usuarios
             WHERE email = ?
         `;
@@ -78,7 +78,7 @@ export const login = async (req,res) => {
         if(!conseguirPassword){
             return res.status(400).json({
                 status:"Error",
-                message:"[-] Algo raro con la password."
+                message:"[-] Usuario o password incorrectos."
             })
         }
 
@@ -87,14 +87,16 @@ export const login = async (req,res) => {
         if(!passwordCorrecta){
             return res.status(400).json({
                 status:"Error",
-                message:"[-] La password es incorrecta."
+                message:"[-] Usuario o password incorrectos."
             })
         }
 
+        const token = await crearToken(existeUsuario[0].id);
         return res.status(200).json({
             status:"Success",
             message:"[+] Has logueado sesión correctamente.",
-            usuario:existeUsuario[0]
+            usuario:existeUsuario[0],
+            token:token
         })
     }catch(e){
         console.log(e);

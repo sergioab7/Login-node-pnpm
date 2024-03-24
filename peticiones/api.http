@@ -16,3 +16,22 @@ Content-Type: application/json
     "email":"test@gmail.com",
     "password":"mipassword123"
 }
+
+
+
+### GET Dashboardd
+GET http://127.0.0.1:3030/api/dashboard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzExMjM2NDQ2LCJleHAiOjE3MTEzMjI4NDZ9.8xWqi5E_6-YJC_SSAOMGHVoCBuN_t805dRtItxxFv5M
+
+
+
+
+### NOTAS
+POST http://127.0.0.1:3030/api/notas/crear
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzExMjM2NDQ2LCJleHAiOjE3MTEzMjI4NDZ9.8xWqi5E_6-YJC_SSAOMGHVoCBuN_t805dRtItxxFv5M
+
+{
+    "titulo":"Titulo primero",
+    "descripcion":"Esta es la descripción de la primera nota"
+}
