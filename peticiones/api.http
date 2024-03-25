@@ -3,8 +3,8 @@ POST http://127.0.0.1:3030/api/auth/login
 Content-Type: application/json
 
 {
-    "email":"test@gmail.com",
-    "password":"mipassword123"
+    "email":"sergio@gmail.com",
+    "password":"sergio123"
 }
 
 ### POST - REGISTRO
@@ -12,26 +12,54 @@ POST http://127.0.0.1:3030/api/auth/registro
 Content-Type: application/json
 
 {
-    "username":"tstterter",
-    "email":"test@gmail.com",
-    "password":"mipassword123"
+    "username":"sergio",
+    "email":"sergio@gmail.com",
+    "password":"sergio123"
 }
 
 
 
 ### GET Dashboardd
 GET http://127.0.0.1:3030/api/dashboard
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzExMjM2NDQ2LCJleHAiOjE3MTEzMjI4NDZ9.8xWqi5E_6-YJC_SSAOMGHVoCBuN_t805dRtItxxFv5M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
 
 
 
 
 ### NOTAS
-POST http://127.0.0.1:3030/api/notas/crear
+POST http://127.0.0.1:3030/api/notas/nota
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzExMjM2NDQ2LCJleHAiOjE3MTEzMjI4NDZ9.8xWqi5E_6-YJC_SSAOMGHVoCBuN_t805dRtItxxFv5M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
 
 {
-    "titulo":"Titulo primero",
-    "descripcion":"Esta es la descripción de la primera nota"
+    "titulo":"nota sergio 2",
+    "descripcion":"primera nota sergio 2"
 }
+
+### DELETE NOTA
+DELETE http://127.0.0.1:3030/api/notas/nota/7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+
+
+### ACTUALIZAR LA NOTA
+PUT http://127.0.0.1:3030/api/notas/nota/8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+
+{
+    "titulo":"NUEVO TITULO",
+    "descripcion":"NUEVA DESCRIPCION"
+}
+
+### VER TODAS LAS NOTAS
+GET http://127.0.0.1:3030/api/notas/notas
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+
+
+### VER UNA NOTA
+GET http://127.0.0.1:3030/api/notas/nota/9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+

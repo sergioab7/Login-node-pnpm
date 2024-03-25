@@ -46,12 +46,6 @@ export const registro = async (req,res) => {
 }
 export const login = async (req,res) => {
     try{
-        // const query = `SELECT * FROM usuarios`;
-        // const [datos] = await conexion.query(query);
-        // return res.status(200).json({
-        //     status:"Success",
-        //     message:datos
-        // })
         const {email} = req.body;
         const query = `
             SELECT id, username, email, id_nota, created
