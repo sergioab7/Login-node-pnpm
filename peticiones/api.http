@@ -39,13 +39,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxN
 ### DELETE NOTA
 DELETE http://127.0.0.1:3030/api/notas/nota/7
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+Authorization: Bearer 
 
 
 ### ACTUALIZAR LA NOTA
 PUT http://127.0.0.1:3030/api/notas/nota/9
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+Authorization: Bearer 
 
 {
     "titulo":"NUEVO TITULO",
@@ -55,11 +55,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxN
 ### VER TODAS LAS NOTAS
 GET http://127.0.0.1:3030/api/notas/notas
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
+Authorization: Bearer 
 
 
 ### VER UNA NOTA
 GET http://127.0.0.1:3030/api/notas/nota/9
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
-
+Authorization: Bearer 
