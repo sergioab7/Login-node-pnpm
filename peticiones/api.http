@@ -21,17 +21,14 @@ Content-Type: application/json
 
 ### GET Dashboardd
 GET http://127.0.0.1:3030/api/dashboard
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
-
+Authorization: Bearer 
 
 
 
 ### NOTAS
 POST http://127.0.0.1:3030/api/notas/nota
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzExMzYyNjQ2LCJleHAiOjE3MTE0NDkwNDZ9.TPewAFnpEW6Fx-Cah4K_lkqSrByrQZrbogH4pm2vv5w
-
-{
+Authorization: Bearer 
     "titulo":"nota sergio 2",
     "descripcion":"primera nota sergio 2"
 }
